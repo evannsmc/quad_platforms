@@ -66,7 +66,7 @@ quad_platforms/
 
 ```bash
 # Inside a ROS 2 workspace src/ directory
-git clone git@github.com:evannsm/quad_platforms.git
+git clone git@github.com:evannsmc/quad_platforms.git
 cd .. && colcon build --symlink-install
 ```
 

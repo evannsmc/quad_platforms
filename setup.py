@@ -17,5 +17,4 @@ setup(
     maintainer_email='egmc@todo.todo',
     description='Shared platform configurations for quadrotor control',
     license='MIT',
-    tests_require=['pytest'],
 )
