@@ -1,6 +1,26 @@
-# Platform abstraction for throttle-based Quadrotor control in ROS 2 (python)
+# Quadrotor Platform Abstraction for ROS 2
 
-A ROS 2 Python library providing an abstract platform interface for quadrotor controllers. Enables the same controller code to run seamlessly on simulation and hardware by encapsulating platform-specific mass and thrust-throttle conversions behind a common API.
+[![Part of: PX4-ROS2 Control Stack](https://img.shields.io/badge/Part_of-PX4--ROS2_Control_Stack-blue)](https://www.evannsmc.com/projects)
+![Algorithms](https://img.shields.io/badge/Algorithms-NMPC_%7C_NR_%7C_Geometric-brightgreen)
+![Languages](https://img.shields.io/badge/Languages-Python_%7C_C%2B%2B-blue)
+[![Docker: PX4-ROS2-Docker](https://img.shields.io/badge/Docker-PX4--ROS2--Docker-2496ED?logo=docker&logoColor=white)](https://github.com/evannsmc/PX4-ROS2-Docker)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+
+A **support library** for the [evannsmc PX4-ROS2 control stack](https://www.evannsmc.com/projects) — an abstract platform interface that lets the same controller code run unchanged on simulation and hardware by hiding platform-specific mass and thrust-throttle conversions behind a common API. It is consumed by the stack's **Python and C++ controllers** (NMPC, Newton-Raphson, geometric); the easiest way to build and integrate the whole stack is the [PX4-ROS2-Docker](https://github.com/evannsmc/PX4-ROS2-Docker) container.
+
+<details>
+<summary><b>📖 Table of Contents</b></summary>
+
+- [Supported Platforms](#supported-platforms)
+- [Key Features](#key-features)
+- [Usage](#usage)
+- [API](#api)
+- [Package Structure](#package-structure)
+- [Installation](#installation)
+- [Used by](#used-by)
+- [License](#license)
+
+</details>
 
 ## Supported Platforms
 
@@ -69,6 +89,19 @@ quad_platforms/
 git clone git@github.com:evannsmc/quad_platforms.git
 cd .. && colcon build --symlink-install
 ```
+
+> This is a support package — it is meant to sit alongside one of the controllers in the same workspace `src/`. For a ready-to-build layout of the whole stack, use the [PX4-ROS2-Docker](https://github.com/evannsmc/PX4-ROS2-Docker) container.
+
+## Used by
+
+This is a support package for the controllers in the evannsmc PX4-ROS2 control stack:
+
+- **Python controllers** — [nmpc_acados_px4](https://github.com/evannsmc/nmpc_acados_px4) · [newton_raphson_px4](https://github.com/evannsmc/newton_raphson_px4) · [geometric_px4](https://github.com/evannsmc/geometric_px4)
+- **C++ controllers** — [nmpc_acados_px4_cpp](https://github.com/evannsmc/nmpc_acados_px4_cpp) · [newton_raphson_px4_cpp](https://github.com/evannsmc/newton_raphson_px4_cpp) · [geometric_px4_cpp](https://github.com/evannsmc/geometric_px4_cpp)
+- **C++ counterpart of this package** — [quad_platforms_cpp](https://github.com/evannsmc/quad_platforms_cpp)
+- **Docker integration** — [PX4-ROS2-Docker](https://github.com/evannsmc/PX4-ROS2-Docker)
+
+Part of the [evannsmc open-source portfolio](https://www.evannsmc.com/projects).
 
 ## License
 
